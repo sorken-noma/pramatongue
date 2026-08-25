@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+        <title>pramatongue</title>
+        <link rel="icon" href="first.png" type="image/png">
+        <style>
+             body {
+                display: flex;
+                justify-content: center;
+                background-image: url("bg.jpg");
+                align-items: center;
+                height: 100vh;
+                overflow: hidden; 
+                transition: filter 1s ease-in;
+
+            }
+            body.dark {
+                filter: brightness(0.5);
+            }
+            #image {
+                max-width: 30%;
+                max-height: 30vh;
+                cursor: pointer;
+            }
+            .first-image {
+                transform: transform 0.2s ease;
+                transition: transform 0.69s ease;
+            }
+            .first-image:hover {
+                transform: scale(0.85);
+                transition: transform 0.9s ease;
+                border-radius: 10px ;
+            }
+            .first-image:active {
+                opacity: 0;
+                transition: 0.25s ease;
+            }
+
+            #image.cover {
+                border-radius: 750px;
+                transition: 70s ease-in;
+                transform: scale(0);
+                animation: transform 70s;
+                pointer-events: none;
+                align-content: center;
+                
+            }
+            #text {
+                position: absolute;
+                margin-top: 20px;
+                font-size: 50px;
+                font-style: oblique;
+                font-weight: lighter;
+                align-items: center;
+                text-align: center;
+                margin-bottom: 4.5vh;
+                color: rgb(255, 49, 49);
+                opacity: 0;
+                transition: opacity 23.1s ease-in;
+                pointer-events: none;
+            }
+            #text.show {
+                opacity: 1;
+            }
+           
+               </style>
+    </head>
+    <body>
+        
+
+        <img id="image" src="first.png" class="first-image" title="click to download 'pramatongue' now">
+
+        <audio id="click" src="click.m4a" class="click"></audio>
+
+        <a id="download" href="pramatongue.zip" download="pramatongue" style="display:none;"></a>
+
+        <div id="text">
+            <p>dsknk vkqs b nkvkw rkjkb</p>
+            <p>exdeu vezkukx bec</p>            
+            <p>ckxqukkx msxdk sxs</p>
+            <p>cenkr dku nsklknsukx</p>
+            <p>vkqs kxdkbk usdk nek</p>            
+            <p>covkwkd dsxqqkv bec</p>
+        </div>
+
+        <script>
+
+            const click =
+        document.getElementById("click");
+
+        const image =
+        document.getElementById("image");
+
+        const text =
+        document.getElementById("text");
+
+        image.addEventListener("click",
+        function() {
+            image.src = "cover.png";
+            image.classList.add("cover");
+            click.play();
+             text.classList.add("show");
+             document.body.classList.add("dark");
+             document.getElementById("download").click();
+
+            
+        });
+</script>
+        
+    </body>
+
+    </html>
